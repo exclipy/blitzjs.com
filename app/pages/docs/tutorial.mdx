@@ -958,6 +958,7 @@ export default resolver.pipe(
 -   const question = await db.question.update({where: {id}, data})
 +   const question = await db.question.update({
 +     where: {id},
++     include: {choices: true},
 +     data: {
 +       ...data,
 +       choices: {
